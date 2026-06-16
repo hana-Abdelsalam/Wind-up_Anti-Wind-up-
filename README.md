@@ -1,24 +1,18 @@
 # Wind-up / Anti-Wind-up
 
 The idea of integral wind-up:
-
 In PID we have integration += error * dt
-
 • The integral keeps summing the error over time.
-
 Example:
 If desired speed = 20 cm/sec
 Current speed = 0 cm/sec
 Then error = 20 cm/sec
-
 So the integral keeps summing:
-
 20
 40
 60
 80
 100
-
 But in fact, the motor has a max PWM limit which is 255.
 This means that even if the PID requests PWM = 400,
 the motor will only take PWM = 255.
@@ -41,13 +35,11 @@ if (!(saturatedHigh && error > 0) &&
 {
     integration += error * dt;
 }
-
 Simply, rather than making the integral keep collecting although it's not capable of increasing the motor speed any further:
 PWM = 255
 We tell it:
 Has it reached the maximum?
 The PWM is fine, don't add more.
-
 In conclusion:
 • The integral remains reasonable
 • Overshoot decreases
