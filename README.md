@@ -3,12 +3,14 @@
 The idea of integral wind-up:
 
 In PID we have integration += error * dt
+
 • The integral keeps summing the error over time.
 
 Example:
 If desired speed = 20 cm/sec
 Current speed = 0 cm/sec
 Then error = 20 cm/sec
+
 So the integral keeps summing:
 
 20
