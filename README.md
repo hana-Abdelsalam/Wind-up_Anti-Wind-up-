@@ -64,3 +64,16 @@ if (!(saturatedHigh && error > 0) &&
 {
     integration += error * dt;
 }
+
+Simply:
+Instead of letting the integral keep growing while the motor is already saturated:
+PWM = 255
+We tell it:
+Stop increasing the integral when the limit is reached.
+
+✅ In conclusion
+
+• The integral remains bounded
+• Overshoot decreases
+• The system becomes more stable
+• PID tuning becomes easier
