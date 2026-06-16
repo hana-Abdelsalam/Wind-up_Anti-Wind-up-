@@ -67,7 +67,7 @@ if (!(saturatedHigh && error > 0) &&
 
 Simply:
 
-Instead of letting the integral keep growing while the motor is already saturated:
+Rather than making the integral keep summing although its not capable of increasing the motor speed any further
 PWM = 255
 
 We tell it:
